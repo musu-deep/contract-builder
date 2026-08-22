@@ -1,0 +1,169 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>منشئ عقود اراك الوطنية — النسخة القانونية المتقدمة</title>
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<div class="app" id="app">
+<aside class="panel">
+  <div class="brand"><div><h1>منشئ عقود اراك الوطنية</h1><small>نسخة قانونية متقدمة • مقاولات خاصة</small></div><div class="logoText">ARAAK</div></div>
+
+  <div class="tabs">
+    <button class="tab active" data-type="structure">أعمال العظم</button>
+    <button class="tab" data-type="finishing">التشطيبات</button>
+  </div>
+
+  <section class="card">
+    <h2>ملف الصياغة القانونية</h2>
+    <div class="profiles">
+      <button class="profile active" data-profile="balanced"><b>متوازن سعودي</b><span>مناسب للعقود اليومية</span></button>
+      <button class="profile" data-profile="employer"><b>حماية أعلى لأراك</b><span>رقابة ومطالبات أشد</span></button>
+      <button class="profile" data-profile="international"><b>ممارسة مشاريع احترافية</b><span>إشعارات وتوثيق وتغيير</span></button>
+      <button class="profile" data-profile="lean"><b>مقاولات صغيرة سريعة</b><span>أقل بنود مع ضبط المخاطر</span></button>
+    </div>
+    <p class="note">الصياغة مركبة من النظام السعودي والنماذج الحكومية والممارسات المنشورة لمكاتب قانونية دولية ومحلية، وليست نسخاً حرفياً من نموذج مملوك لجهة خاصة.</p>
+  </section>
+
+  <section class="card">
+    <h2>عمق العقد وطوله</h2>
+    <div class="presets">
+      <button class="preset" data-depth="1">مختصر</button>
+      <button class="preset active" data-depth="2">متوازن</button>
+      <button class="preset" data-depth="3">متقدم</button>
+      <button class="preset" data-depth="4">احترافي</button>
+    </div>
+    <div class="field" style="margin-top:8px"><label>هدف الطباعة</label>
+      <select id="pageTarget"><option value="3">مكثف — نحو 3 صفحات</option><option value="4">متوسط — 4 إلى 5 صفحات</option><option value="free">موسع — دون حد مستهدف</option></select>
+    </div>
+  </section>
+
+  <section class="card">
+    <h2>الأطراف والمشروع</h2>
+    <div class="field"><label>الطرف الأول</label><input id="firstParty" value="شركة اراك الوطنية"></div>
+    <div class="grid2">
+      <div class="field"><label>السجل التجاري</label><input id="firstCR" placeholder="رقم السجل"></div>
+      <div class="field"><label>الممثل المخول</label><input id="firstRep" placeholder="الاسم / الصفة"></div>
+    </div>
+    <div class="field"><label>الطرف الثاني — المقاول</label><input id="secondParty" value="شركة / مؤسسة X"></div>
+    <div class="grid2">
+      <div class="field"><label>السجل التجاري</label><input id="secondCR" placeholder="رقم السجل"></div>
+      <div class="field"><label>الممثل المخول</label><input id="secondRep" placeholder="الاسم / الصفة"></div>
+    </div>
+    <div class="field"><label>اسم المشروع</label><input id="projectName" placeholder="اسم المشروع"></div>
+    <div class="field"><label>موقع المشروع</label><input id="projectLocation" placeholder="المدينة / الموقع"></div>
+    <div class="grid2">
+      <div class="field"><label>تاريخ العقد</label><input id="contractDate" type="date"></div>
+      <div class="field"><label>بداية المدة</label><select id="startBasis"><option>أمر المباشرة</option><option>محضر استلام الموقع</option><option>استلام الدفعة المقدمة</option></select></div>
+    </div>
+  </section>
+
+  <section class="card">
+    <h2>القيمة والمدة</h2>
+    <div class="grid2">
+      <div class="field"><label>سعر المتر (ريال)</label><input id="priceM2" type="number" min="0" value="0"></div>
+      <div class="field"><label>المساحة التقديرية (م²)</label><input id="areaM2" type="number" min="0" value="0"></div>
+    </div>
+    <div class="grid2">
+      <div class="field"><label>مدة التنفيذ</label><input id="duration" value="120 يوماً"></div>
+      <div class="field"><label>الضريبة</label><select id="vat"><option>تضاف ضريبة القيمة المضافة حسب النظام</option><option>السعر شامل ضريبة القيمة المضافة</option><option>السعر غير شامل ضريبة القيمة المضافة</option></select></div>
+    </div>
+    <div class="grid2">
+      <div class="field"><label>دفعة مقدمة %</label><input id="advance" type="number" min="0" max="100" value="10"></div>
+      <div class="field"><label>حجز ضمان %</label><input id="retention" type="number" min="0" max="100" value="5"></div>
+    </div>
+    <div class="grid2">
+      <div class="field"><label>تعويض التأخير / أسبوع %</label><input id="delayRate" type="number" min="0" step=".1" value="0.5"></div>
+      <div class="field"><label>الحد الأقصى %</label><input id="delayCap" type="number" min="0" max="100" value="10"></div>
+    </div>
+  </section>
+
+  <section class="card" id="finishPanel" style="display:none">
+    <h2>مستوى التشطيب</h2>
+    <div class="field"><label>الفئة</label><select id="finishGrade"><option value="standard">Standard — قياسي</option><option value="deluxe">Deluxe — فاخر</option><option value="custom">مواصفات خاصة</option></select></div>
+    <div class="grid2">
+      <div class="field"><label>Standard / م²</label><input id="standardPrice" type="number" min="0" value="0"></div>
+      <div class="field"><label>Deluxe / م²</label><input id="deluxePrice" type="number" min="0" value="0"></div>
+    </div>
+  </section>
+
+  <section class="card">
+    <h2>الضمانات والتأمينات</h2>
+    <div class="grid2">
+      <div class="field"><label>ضمان حسن التنفيذ %</label><input id="performanceBond" type="number" min="0" max="100" value="5"></div>
+      <div class="field"><label>ضمان الدفعة المقدمة</label><select id="advanceGuarantee"><option>بنفس قيمة الدفعة المقدمة</option><option>غير مطلوب</option><option>حسب اتفاق مستقل</option></select></div>
+    </div>
+    <div class="field"><label>ضمان العيوب التنفيذية</label><input id="warranty" value="12 شهراً"></div>
+    <div class="field"><label>التأمين</label><select id="insurance"><option>التأمينات النظامية وتأمين مسؤولية المقاول بحسب طبيعة المشروع</option><option>تأمين جميع أخطار المقاولين حسب ملحق خاص</option><option>حسب ما تحدده اراك قبل المباشرة</option></select></div>
+  </section>
+
+  <section class="card">
+    <h2>نطاق العمل</h2>
+    <div class="field"><label>مسؤولية التوريد</label><select id="supplyMode"><option>شامل المواد والمصنعية والمعدات</option><option>مصنعية ومعدات فقط والمواد على الطرف الأول</option><option>وفق مصفوفة توريد ومسؤوليات مرفقة</option></select></div>
+    <div class="checks" id="scopeChecks"></div>
+  </section>
+
+  <section class="card">
+    <h2>وحدات الحماية القانونية</h2>
+    <div id="modules"></div>
+  </section>
+
+  <section class="card">
+    <h2>الإشعارات والمطالبات</h2>
+    <div class="grid2">
+      <div class="field"><label>إشعار التأخير / المطالبة</label><select id="claimNotice"><option value="7">7 أيام</option><option value="14" selected>14 يوماً</option><option value="21">21 يوماً</option><option value="28">28 يوماً</option></select></div>
+      <div class="field"><label>تفاصيل المطالبة خلال</label><select id="detailNotice"><option value="14">14 يوماً</option><option value="21">21 يوماً</option><option value="28" selected>28 يوماً</option><option value="42">42 يوماً</option></select></div>
+    </div>
+    <div class="field"><label>جهة إصدار أوامر التغيير</label><input id="variationAuthority" value="الممثل المخول للطرف الأول أو من يفوضه كتابةً"></div>
+    <div class="field"><label>اعتماد القياس والاستلام</label><input id="approver" value="الطرف الأول أو الاستشاري / ممثله المعتمد"></div>
+  </section>
+
+  <section class="card">
+    <h2>طريقة القياس وتسوية النزاع</h2>
+    <div class="field"><label>القياس</label><select id="measurement"><option>المسطحات المنفذة فعلياً والمعتمدة</option><option>المسطحات وفق المخططات المعتمدة</option><option>جدول الكميات والحصر النهائي المعتمد</option></select></div>
+    <div class="field"><label>فض النزاع</label><select id="dispute"><option>تفاوض ودي ثم المحكمة المختصة في المملكة</option><option>تفاوض ودي ثم وساطة ثم المحكمة المختصة</option><option>تفاوض ودي ثم تحكيم وفق اتفاق تحكيم مستقل</option></select></div>
+    <div class="grid2">
+      <div class="field"><label>مدة التسوية الودية</label><input id="amicableDays" value="15 يوماً"></div>
+      <div class="field"><label>مدينة الاختصاص</label><input id="jurisdictionCity" placeholder="مثال: جدة"></div>
+    </div>
+    <div class="field"><label>شروط خاصة</label><textarea id="specialNotes" placeholder="أي متطلبات خاصة بالمشروع أو مواد محددة أو حدود نطاق..."></textarea></div>
+  </section>
+
+  <div class="actions">
+    <button class="btn primary" id="regenerate">تحديث العقد</button>
+    <button class="btn light" id="printBtn">طباعة / PDF</button>
+    <button class="btn" id="downloadBtn">تنزيل العقد HTML</button>
+    <button class="btn" id="saveBtn">حفظ الإعدادات</button>
+    <button class="btn" id="loadBtn">استعادة المحفوظ</button>
+    <button class="btn warn" id="resetBtn">إعادة ضبط</button>
+  </div>
+</aside>
+
+<main class="workspace">
+  <div class="toolbar">
+    <div><span class="badge" id="kindBadge">عقد أعمال العظم</span><span class="badge" id="profileBadge">متوازن سعودي</span><span class="status" id="depthBadge">مستوى متوازن</span></div>
+    <div class="scorebar"><div class="score">اكتمال البيانات <b id="completionScore">0%</b></div><div class="score">نضج تعاقدي <b id="maturityScore">0%</b></div></div>
+  </div>
+  <div class="alerts" id="alerts"></div>
+  <article class="paper compact" id="paper" contenteditable="true" spellcheck="false"></article>
+
+  <details class="refs">
+    <summary>مرجعية الصياغة القانونية والمهنية المستخدمة في تطوير النموذج</summary>
+    <p>هذا النموذج صياغة أصلية مركبة، ولا ينسخ نصوص FIDIC أو عقود مكاتب المحاماة المملوكة. استُخدمت المصادر العامة لتحديد هيكل البنود والمخاطر وأفضل الممارسات.</p>
+    <ul>
+      <li><b>نظام المعاملات المدنية السعودي:</b> أحكام المقاولة، الالتزام بالمواصفات والمدة، تصحيح الإخلال، العقود بسعر الوحدة، التغييرات، المقاولة من الباطن، والتعويض الاتفاقي.</li>
+      <li><b>وزارة المالية / اعتماد:</b> نماذج عقود الإنشاءات العامة ومنهجية وثيقة العقد، المستخلصات، الضمانات، ترتيب المستندات والإنهاء.</li>
+      <li><b>وزارة البلديات والإسكان / بلدي:</b> العقود النموذجية التي طُورت بعد مقارنة معيارية مع الممارسات الدولية بما فيها FIDIC.</li>
+      <li><b>الهيئة السعودية للمقاولين:</b> منهجية العقود النموذجية وملحق الشروط الخاصة والمواصفات الفنية.</li>
+      <li><b>ممارسات قانونية منشورة:</b> Al Tamimi، Freshfields، A&O Shearman، Chambers/GLA، Hammad & Al‑Mehdar، Norton Rose Fulbright — فيما يتعلق بالتأخير، التمديد، التغييرات، الإشعارات، الضمانات والعيوب والمطالبات.</li>
+    </ul>
+    <p class="mini">هذه أداة إعداد تعاقدي وليست بديلاً عن مراجعة محامٍ مرخص للمشروع النهائي، خصوصاً في العقود مرتفعة القيمة أو المشاريع ذات المتطلبات التأمينية/التمويلية/التحكيمية الخاصة.</p>
+  </details>
+</main>
+</div>
+
+<script src="app.js"></script>
+</body>
+</html>
