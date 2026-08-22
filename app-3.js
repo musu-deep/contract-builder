@@ -24,7 +24,7 @@ function load(){
 function download(){
  const name=contractType==='structure'?'عقد-اعمال-العظم-اراك-المتقدم.html':'عقد-التشطيبات-اراك-المتقدم.html';
  const body=$('paper').outerHTML.replace('contenteditable="true"','contenteditable="false"');
- const css=[...document.querySelectorAll('style')].map(s=>s.textContent).join('\n');
+ const css=[...document.styleSheets].map(sheet=>{try{return [...sheet.cssRules].map(r=>r.cssText).join('\n')}catch(e){return ''}}).join('\n');
  const out=`<!doctype html><html lang="ar" dir="rtl"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>${name}</title><style>${css} body{display:block}.panel,.toolbar,.alerts,.refs{display:none!important}.workspace{padding:0}.paper{box-shadow:none;margin:0 auto}</style></head><body><main class="workspace">${body}</main></body></html>`;
  const blob=new Blob([out],{type:'text/html;charset=utf-8'}),url=URL.createObjectURL(blob),a=document.createElement('a');a.href=url;a.download=name;a.click();setTimeout(()=>URL.revokeObjectURL(url),1200);
 }
